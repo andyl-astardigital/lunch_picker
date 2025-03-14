@@ -17,12 +17,12 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="text-center p-6 rounded-lg shadow-lg bg-white">
       <img src="lunch.png" alt="Lunch" class="mx-auto mb-4" style="width: 60%;" />
-      <h1 class="text-3xl font-extrabold mb-4 text-purple-600">Feeling Peckish? Let's Pick a Place!</h1>
+      <h1 class="text-2xl font-extrabold mb-4 text-purple-600">Feeling Peckish? Let's Pick a Place!</h1>
       <ul id="the-list" class="list-disc list-inside mb-4 text-left text-lg text-blue-500">
        
       </ul>
       <div>
-        <p id="picked" class="font-semibold mt-4 text-xl text-green-600"></p>
+        <p id="picked" class="font-semibold mt-4 text-xxl text-green-600"></p>
       </div>
     </div>
     <script type="text/javascript">
@@ -35,7 +35,7 @@
         const now = new Date();
         const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
         const randomEntry = entries[dayOfYear % entries.length];
-        document.getElementById("picked").innerText = `Today's Pick: ${randomEntry}! Yum!`;
+        document.getElementById("picked").innerText = `You ARE going to: ${randomEntry}! No arguments!`;
       }
 
       selectRandomEntry();
