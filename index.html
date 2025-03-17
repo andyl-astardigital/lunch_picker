@@ -23,6 +23,7 @@
       </ul>
       <div>
         <p id="picked" class="font-semibold mt-4 text-xxl text-green-600"></p>
+        <p id="quote" class="font-light mt-2 text-lg text-gray-500"></p>
       </div>
     </div>
     <script type="text/javascript">
@@ -30,12 +31,22 @@
 
       function selectRandomEntry() {
         const entries = ["Chinese Buffet", "KFC", "Madame Mews", "Sandwich Shop", "Freshmex", "The Good Food Shop"];
+        const quotes = [
+          "I have a degree in computer science, which means I can fix your printer. - Anonymous",
+          "Why do programmers prefer dark mode? Because light attracts bugs! - Anonymous",
+          "There are 10 types of people in the world: those who understand binary, and those who don’t. - Anonymous",
+          "I would love to change the world, but they wont give me the source code. - Anonymous",
+          "To err is human, but to really foul things up you need a computer. - Paul R. Ehrlich",
+          "The best thing about a boolean is even if you are wrong, you are only off by a bit. - Anonymous"
+        ];
         // set the list to match the entries
         document.getElementById("the-list").innerHTML = entries.map((entry) => `<li>${entry}</li>`).join("");
         const now = new Date();
         const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
         const randomEntry = entries[dayOfYear % entries.length];
+        const randomQuote = quotes[dayOfYear % quotes.length];
         document.getElementById("picked").innerText = `You ARE going to: ${randomEntry}! No arguments!`;
+        document.getElementById("quote").innerText = `Quote of the Day: "${randomQuote}"`;
       }
 
       selectRandomEntry();
