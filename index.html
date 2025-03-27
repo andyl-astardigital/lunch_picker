@@ -30,14 +30,17 @@
       microsoftTeams.appInitialization.notifySuccess();
 
       function selectRandomEntry() {
-        const entries = ["Chinese Buffet", "KFC", "Madame Mews", "Sandwich Shop", "Freshmex", "The Good Food Shop", "<s>Simons</s>, err Maggies"];
+        const entries = ["Chinese Buffet", "KFC", "Madame Mews", "Sandwich Shop", "Freshmex", "The Good Food Shop", "Maggies Grill", "Burger King", "The Howff", "Oodles"];
         const quotes = [
           "I have a degree in computer science, which means I can fix your printer. - Anonymous",
           "Why do programmers prefer dark mode? Because light attracts bugs! - Anonymous",
           "There are 10 types of people in the world: those who understand binary, and those who don’t. - Anonymous",
           "I would love to change the world, but they wont give me the source code. - Anonymous",
           "To err is human, but to really foul things up you need a computer. - Paul R. Ehrlich",
-          "The best thing about a boolean is even if you are wrong, you are only off by a bit. - Anonymous"
+          "The best thing about a boolean is even if you are wrong, you are only off by a bit. - Anonymous",
+          "Though a program be but three lines long, someday it will have to be maintained. - Anonymous",
+          "Let the programmers be many and the managers few -- then all will be productive. - Anonymous",
+          "You can demonstrate a program for a corporate executive, but you can't make him computer literate. - Anonymous"
         ];
         // set the list to match the entries
         document.getElementById("the-list").innerHTML = entries.map((entry) => `<li>${entry}</li>`).join("");
