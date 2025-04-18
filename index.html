@@ -30,7 +30,7 @@
       microsoftTeams.appInitialization.notifySuccess();
 
       function selectRandomEntry() {
-        const entries = ["Chinese Buffet", "KFC", "Madame Mews", "Sandwich Shop", "Freshmex", "The Good Food Shop", "Maggies Grill", "Burger King", "The Howff", "Oodles"];
+        var entries = ["Chinese Buffet", "KFC", "Madame Mews", "Sandwich Shop", "Freshmex", "The Good Food Shop", "Maggies Grill", "Burger King", "The Howff", "Oodles"];
         const quotes = [
           "I have a degree in computer science, which means I can fix your printer. - Anonymous",
           "Why do programmers prefer dark mode? Because light attracts bugs! - Anonymous",
@@ -46,7 +46,10 @@
         document.getElementById("the-list").innerHTML = entries.map((entry) => `<li>${entry}</li>`).join("");
         const now = new Date();
         const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+        
+        entries = entries.filter(x=>x!='The Howff')
         const randomEntry = entries[dayOfYear % entries.length];
+
         const randomQuote = quotes[dayOfYear % quotes.length];
         document.getElementById("picked").innerText = `You ARE going to: ${randomEntry}! No arguments!`;
         document.getElementById("quote").innerText = `Quote of the Day: "${randomQuote}"`;
